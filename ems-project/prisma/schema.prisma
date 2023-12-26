@@ -11,9 +11,28 @@ datasource db {
 }
 
 model Employee {
-  id        String @id @default(cuid()) @map("_id")
-  firstname String
-  lastname  String
-  email     String @unique
-  salary    Int
+  id          String       @id @default(cuid()) @map("_id")
+  firstname   String
+  lastname    String
+  email       String       @unique
+  salary      Int
+  attendances Attendance[]
+  benefits    Benefit[]
+}
+
+model Attendance {
+  id         String   @id @default(cuid()) @map("_id")
+  status     String
+  timestamp  DateTime
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id])
+}
+
+model Benefit {
+  id         String   @id @default(cuid()) @map("_id")
+  type       String
+  startDate  DateTime
+  endDate    DateTime
+  employeeId String
+  employee   Employee @relation(fields: [employeeId], references: [id])
 }

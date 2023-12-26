@@ -10,7 +10,7 @@ import { PrismaClient } from "@prisma/client";
 
 export default async function POST(req, res){
     try {
-        console.log('Request Received');
+        console.log('Request received');
         if (req.method != 'POST') {
             return res
             .status(405)
@@ -45,6 +45,6 @@ export default async function POST(req, res){
         console.log(error);
         return res
         .status(400)
-        .json({ message: "The Route is not working." })
+        .json({ message: "The Submit route is not working." })
     }
 } 

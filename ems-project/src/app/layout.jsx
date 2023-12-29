@@ -4,6 +4,7 @@ import Footer from '@/components/Footer/page'
 import { ClerkProvider } from '@clerk/nextjs'
 import NavBar from '@/components/Navbar/page'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {

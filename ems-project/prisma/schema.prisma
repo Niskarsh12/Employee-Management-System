@@ -15,9 +15,11 @@ model Employee {
   firstname   String
   lastname    String
   email       String       @unique
+  gender      String
   salary      Int
   attendances Attendance[]
   benefits    Benefit[]
+  surveys     Survey[]
 }
 
 model Attendance {
@@ -35,4 +37,21 @@ model Benefit {
   endDate    DateTime
   employeeId String
   employee   Employee @relation(fields: [employeeId], references: [id])
+}
+
+model Survey {
+  id         String     @id @default(cuid()) @map("_id")
+  title      String
+  questions  String[]
+  responses  Response[]
+  employeeId String
+  employee   Employee   @relation(fields: [employeeId], references: [id])
+}
+
+model Response {
+  id       String @id @default(cuid()) @map("_id")
+  answer   String
+  question String
+  surveyId String
+  survey   Survey @relation(fields: [surveyId], references: [id])
 }

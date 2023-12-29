@@ -26,6 +26,7 @@ export default async function POST(req, res){
                 firstname: data.firstname,
                 lastname: data.lastname,
                 email: data.email,
+                gender: data.gender,
                 salary: parseInt(data.salary)
             }
         }).catch((error) => {

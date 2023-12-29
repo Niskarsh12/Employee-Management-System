@@ -1,12 +1,46 @@
-import React from 'react'
+// "use client"
+// import React, { useState } from 'react'
+
+
+// const Dashboard = () => {
+
+//   const [Employee, setEmployee] = useState([]);
+
+//   return (
+//     <div className='flex flex-col justify-center items-center'>
+//       <div className='font-bold text-black text-4xl'>
+//         Welcome to The Dashboard
+//       </div>
+//       <div className='mt-4 mr-80'>
+//         <button type="button" className='bg-purple-500 rounded-2xl p-2 font-medium text-lg'>Add Employee+</button>
+//       </div>
+//     </div>
+//   )
+// }
+
+// export default Dashboard
+"use client"
+import React, { useState } from 'react'
 
 const Dashboard = () => {
+  const [showForm, setShowForm] = useState(false);
+
   return (
-    <div>Welocome to the Dashboard</div>
+    <div className='flex flex-col items-start'>
+      <h1 className='font-bold text-black text-4xl mt-4'>
+        Welcome to The Dashboard
+      </h1>
+      <div className='mt-4'>
+        <button type="button" className='bg-purple-500 rounded-2xl p-2 font-medium text-lg ml-0'>Add Employee+</button>
+      </div>
+    </div>
   )
 }
 
 export default Dashboard
+
+
+
 
 
 
